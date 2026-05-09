@@ -8,24 +8,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     .hero-bg {
-      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('fondo.jpg');
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('IMG_20230324_192817291_HDR.jpg');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hike-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('20230304_180107_HDR-01.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .pond-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('20221117_143610-01.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section-bg {
+      background-attachment: fixed;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     }
   </style>
 </head>
 <body class="font-sans bg-stone-50 text-stone-800">
 
   <!-- HERO -->
-  <header class="hero-bg text-white py-24 md:py-32">
+  <header class="hero-bg text-white py-24 md:py-32 section-bg">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
         MOUNTAIN JOURNAL
       </h1>
       <p class="text-2xl md:text-3xl mb-8">
         La plataforma que convierte cada expedición<br>en una <span class="text-amber-400">experiencia memorable</span>
       </p>
-      <a href="#planes" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xl px-10 py-4 rounded-xl transition">
+      <a href="#planes" 
+         class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xl px-10 py-4 rounded-2xl transition shadow-lg">
         Quiero probarlo gratis →
       </a>
       <p class="mt-6 text-sm opacity-90">Funciona offline • PWA • IA con Claude</p>
@@ -37,16 +63,16 @@
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8">El problema que todos conocemos</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-stone-100 p-8 rounded-2xl">
+        <div class="bg-stone-100 p-8 rounded-3xl">
           <p class="text-lg">Tus clientes viven experiencias transformadoras en la montaña...</p>
           <p class="text-2xl mt-6 text-stone-500">Pero al volver todo se desvanece:</p>
           <ul class="mt-6 space-y-3 text-lg">
-            <li class="flex gap-3"><span class="text-red-500">✗</span> Emails genéricos</li>
-            <li class="flex gap-3"><span class="text-red-500">✗</span> Fotos en el celular</li>
-            <li class="flex gap-3"><span class="text-red-500">✗</span> Feedback vago por WhatsApp</li>
+            <li class="flex gap-3 items-center"><span class="text-red-500 text-xl">✗</span> Emails genéricos</li>
+            <li class="flex gap-3 items-center"><span class="text-red-500 text-xl">✗</span> Fotos en el celular</li>
+            <li class="flex gap-3 items-center"><span class="text-red-500 text-xl">✗</span> Feedback vago por WhatsApp</li>
           </ul>
         </div>
-        <div class="bg-emerald-50 p-8 rounded-2xl flex items-center">
+        <div class="bg-emerald-50 p-8 rounded-3xl flex items-center">
           <p class="text-2xl leading-relaxed">
             <strong>Mountain Journal</strong> cambia eso para siempre.
           </p>
@@ -56,21 +82,21 @@
   </section>
 
   <!-- CÓMO FUNCIONA -->
-  <section class="py-16 bg-stone-900 text-white">
+  <section class="hike-bg text-white py-20 section-bg">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-12">Cómo funciona</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
+        <div class="text-center bg-white/10 backdrop-blur-md p-8 rounded-3xl card-hover">
           <div class="w-16 h-16 mx-auto bg-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-4">1</div>
           <h3 class="font-semibold text-xl mb-2">Antes del viaje</h3>
           <p>Compartís un link. Tus viajeros instalan la app en 10 segundos (PWA).</p>
         </div>
-        <div class="text-center">
+        <div class="text-center bg-white/10 backdrop-blur-md p-8 rounded-3xl card-hover">
           <div class="w-16 h-16 mx-auto bg-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-4">2</div>
           <h3 class="font-semibold text-xl mb-2">Durante la expedición</h3>
           <p>Escriben reflexiones, gratitud y estado de ánimo. Funciona 100% offline.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center bg-white/10 backdrop-blur-md p-8 rounded-3xl card-hover">
           <div class="w-16 h-16 mx-auto bg-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-4">3</div>
           <h3 class="font-semibold text-xl mb-2">Al finalizar</h3>
           <p>Ellos reciben un hermoso PDF personalizado.<br><strong>Vos recibís un informe profesional con IA.</strong></p>
@@ -80,12 +106,14 @@
   </section>
 
   <!-- BENEFICIOS PARA GUÍAS -->
-  <section class="py-16">
+  <section class="py-16 bg-white">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-12">Qué recibís vos como guía o agencia</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white border border-stone-200 p-8 rounded-3xl">
-          <h3 class="text-2xl font-semibold mb-6">Informe IA automático</h3>
+        <div class="bg-white border border-stone-200 p-8 rounded-3xl card-hover">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <span class="text-amber-600">📊</span> Informe IA automático
+          </h3>
           <ul class="space-y-4 text-lg">
             <li>✅ Análisis de sentimiento del grupo</li>
             <li>✅ Evaluación detallada de tu guía</li>
@@ -94,8 +122,10 @@
             <li>✅ Recomendaciones accionables</li>
           </ul>
         </div>
-        <div class="bg-white border border-stone-200 p-8 rounded-3xl">
-          <h3 class="text-2xl font-semibold mb-6">Beneficios reales</h3>
+        <div class="bg-white border border-stone-200 p-8 rounded-3xl card-hover">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <span class="text-amber-600">🚀</span> Beneficios reales
+          </h3>
           <ul class="space-y-4 text-lg">
             <li>✅ Testimonios auténticos para marketing</li>
             <li>✅ Mejora continua de tu servicio</li>
@@ -108,17 +138,25 @@
   </section>
 
   <!-- CASO REAL -->
-  <section class="py-16 bg-emerald-700 text-white">
+  <section class="pond-bg text-white py-20 section-bg">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-8">Caso real: EKV Trekking</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left">
-        <div><strong class="text-4xl">8</strong><br>viajeros</div>
-        <div><strong class="text-4xl">47</strong><br>entradas</div>
-        <div><strong class="text-4xl">94%</strong><br>sentimiento positivo</div>
-        <div><strong class="text-4xl">12</strong><br>testimonios orgánicos</div>
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+          <strong class="text-5xl">8</strong><br><span class="opacity-90">viajeros</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+          <strong class="text-5xl">47</strong><br><span class="opacity-90">entradas</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+          <strong class="text-5xl">94%</strong><br><span class="opacity-90">positivo</span>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl">
+          <strong class="text-5xl">12</strong><br><span class="opacity-90">testimonios</span>
+        </div>
       </div>
-      <p class="mt-10 text-lg italic">"Pasé de recibir 'todo genial' por WhatsApp a tener datos concretos, insights y contenido profesional."</p>
-      <p class="mt-4">— Walter, Guía de EKV Trekking</p>
+      <p class="mt-12 text-xl italic max-w-2xl mx-auto">"Pasé de recibir 'todo genial' por WhatsApp a tener datos concretos, insights y contenido profesional."</p>
+      <p class="mt-6 font-semibold">— Walter, Guía de EKV Trekking</p>
     </div>
   </section>
 
@@ -126,50 +164,59 @@
   <section id="planes" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-4">Elegí tu plan</h2>
-      <p class="text-center text-xl mb-12">Sin contratos largos • Cancelación cuando quieras</p>
+      <p class="text-center text-xl mb-12 text-stone-600">Sin contratos largos • Cancelación cuando quieras</p>
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Plan 1 -->
-        <div class="border border-stone-300 rounded-3xl p-8">
+        <div class="border border-stone-300 rounded-3xl p-8 card-hover">
           <h3 class="text-2xl font-bold mb-2">🥾 Guía Independiente</h3>
           <p class="text-sm text-stone-500 mb-6">Ideal para freelance</p>
-          <div class="text-5xl font-bold mb-8">Consultar</div>
-          <ul class="space-y-3 mb-10">
+          <div class="text-5xl font-bold mb-8 text-stone-800">Consultar</div>
+          <ul class="space-y-3 mb-10 text-stone-700">
             <li>✔ Hasta 50 viajeros/mes</li>
             <li>✔ App con tu logo</li>
             <li>✔ Informes con IA</li>
             <li>✔ Soporte por WhatsApp</li>
           </ul>
-          <a href="https://wa.me/543571608755" class="block text-center bg-stone-800 text-white py-4 rounded-2xl font-semibold">Elegir este plan</a>
+          <a href="https://wa.me/543571608755" 
+             class="block text-center bg-stone-800 hover:bg-stone-900 text-white py-4 rounded-2xl font-semibold transition">
+            Elegir este plan
+          </a>
         </div>
 
         <!-- Plan 2 (Recomendado) -->
-        <div class="border-2 border-amber-600 rounded-3xl p-8 relative">
+        <div class="border-2 border-amber-600 rounded-3xl p-8 relative card-hover">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-600 text-white text-sm font-bold px-6 py-1 rounded-full">MÁS POPULAR</div>
           <h3 class="text-2xl font-bold mb-2">🏔️ Profesional</h3>
           <p class="text-sm text-stone-500 mb-6">Para empresas pequeñas</p>
-          <div class="text-5xl font-bold mb-8">Consultar</div>
-          <ul class="space-y-3 mb-10">
+          <div class="text-5xl font-bold mb-8 text-stone-800">Consultar</div>
+          <ul class="space-y-3 mb-10 text-stone-700">
             <li>✔ Hasta 150 viajeros/mes</li>
             <li>✔ Multi-guía</li>
             <li>✔ Dashboard consolidado</li>
             <li>✔ Soporte prioritario</li>
           </ul>
-          <a href="https://wa.me/543571608755" class="block text-center bg-amber-600 text-white py-4 rounded-2xl font-semibold">Elegir este plan</a>
+          <a href="https://wa.me/543571608755" 
+             class="block text-center bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-2xl font-semibold transition">
+            Elegir este plan
+          </a>
         </div>
 
         <!-- Plan 3 -->
-        <div class="border border-stone-300 rounded-3xl p-8">
+        <div class="border border-stone-300 rounded-3xl p-8 card-hover">
           <h3 class="text-2xl font-bold mb-2">🌍 Agencia</h3>
           <p class="text-sm text-stone-500 mb-6">Para operadores consolidados</p>
-          <div class="text-5xl font-bold mb-8">Consultar</div>
-          <ul class="space-y-3 mb-10">
+          <div class="text-5xl font-bold mb-8 text-stone-800">Consultar</div>
+          <ul class="space-y-3 mb-10 text-stone-700">
             <li>✔ Viajeros ilimitados</li>
             <li>✔ White label (marca blanca)</li>
             <li>✔ Soporte dedicado</li>
             <li>✔ Onboarding personalizado</li>
           </ul>
-          <a href="https://wa.me/543571608755" class="block text-center bg-stone-800 text-white py-4 rounded-2xl font-semibold">Elegir este plan</a>
+          <a href="https://wa.me/543571608755" 
+             class="block text-center bg-stone-800 hover:bg-stone-900 text-white py-4 rounded-2xl font-semibold transition">
+            Elegir este plan
+          </a>
         </div>
       </div>
     </div>
@@ -190,19 +237,20 @@
       <h2 class="text-4xl font-bold mb-6">¿Listo para profesionalizar tus expediciones?</h2>
       <p class="text-xl mb-10">Setup en 15 minutos • Primer informe en tu próxima salida</p>
       <a href="https://wa.me/543571608755?text=Hola%20quiero%20probar%20Mountain%20Journal" 
-         class="inline-block bg-white text-stone-900 font-bold text-2xl px-12 py-6 rounded-2xl hover:bg-stone-100 transition">
+         class="inline-block bg-white text-stone-900 font-bold text-2xl px-12 py-6 rounded-2xl hover:bg-stone-100 transition shadow-xl">
         Contactame por WhatsApp
       </a>
-      <p class="mt-6">Email: ekvsenderismo@gmail.com</p>
+      <p class="mt-6 opacity-90">Email: ekvsenderismo@gmail.com</p>
     </div>
   </section>
 
   <footer class="bg-stone-900 text-stone-400 py-12 text-center text-sm">
-    <p>Mountain Journal © 2026 • Convertí experiencias en datos. Datos en mejoras.</p>
+    <p>Mountain Journal © 2026 • Convertí experiencias en datos. Datos en mejoras. Mejoras en más clientes.</p>
   </footer>
 
   <script>
-    // Tailwind script ya incluido
+    // Script para mejorar la experiencia (opcional)
+    document.documentElement.style.setProperty('--tw-ring-color', 'rgb(245 158 11)');
   </script>
 </body>
 </html>
