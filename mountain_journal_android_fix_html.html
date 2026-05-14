@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Journal - Convierte cada expedición en una experiencia memorable</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fafaf9;
+      color: #292524;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-large {
+      padding: 80px 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('IMG_20230324_192817291_HDR.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hike-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('20230304_180107_HDR-01.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .pond-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('20221117_143610-01.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hero {
+      padding: 96px 0 128px;
+    }
+
+    h1 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero p.main {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .amber {
+      color: #fbbf24;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 18px 40px;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #d97706;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #b45309;
+    }
+
+    .btn-dark {
+      background: #292524;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #1c1917;
+    }
+
+    .btn-white {
+      background: white;
+      color: #292524;
+    }
+
+    .btn-white:hover {
+      background: #f5f5f4;
+    }
+
+    .small-text {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 32px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      border-radius: 28px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px rgba(0,0,0,0.12);
+    }
+
+    .card-light {
+      background: white;
+      border: 1px solid #d6d3d1;
+    }
+
+    .card-stone {
+      background: #f5f5f4;
+    }
+
+    .card-green {
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .step {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: #d97706;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .stats strong {
+      font-size: 54px;
+      display: block;
+    }
+
+    .popular {
+      border: 2px solid #d97706;
+      position: relative;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #d97706;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .dark-section {
+      background: #1c1917;
+      color: white;
+    }
+
+    .amber-section {
+      background: #d97706;
+      color: white;
+    }
+
+    footer {
+      background: #1c1917;
+      color: #a8a29e;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .hero p.main {
+        font-size: 24px;
+      }
+
+      .hero {
+        padding: 72px 0 96px;
+      }
+
+      .hero-bg,
+      .hike-bg,
+      .pond-bg {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero hero-bg text-white">
+    <div class="container text-center">
+      <h1>MOUNTAIN JOURNAL</h1>
+
+      <p class="main">
+        La plataforma que convierte cada expedición<br>
+        en una <span class="amber">experiencia memorable</span>
+      </p>
+
+      <a href="#planes" class="btn btn-primary">
+        Quiero probarlo gratis →
+      </a>
+
+      <p class="small-text">Funciona offline • PWA • IA con Claude</p>
+    </div>
+  </header>
+
+  <section class="section" style="background:white;">
+    <div class="container">
+      <h2 class="text-center">El problema que todos conocemos</h2>
+
+      <div class="grid-2">
+        <div class="card card-stone">
+          <p style="font-size:20px;">Tus clientes viven experiencias transformadoras en la montaña...</p>
+
+          <p style="font-size:32px; color:#78716c; margin-top:24px;">
+            Pero al volver todo se desvanece:
+          </p>
+
+          <ul style="margin-top:24px;">
+            <li>✗ Emails genéricos</li>
+            <li>✗ Fotos en el celular</li>
+            <li>✗ Feedback vago por WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="card card-green">
+          <p style="font-size:32px; line-height:1.5;">
+            <strong>Mountain Journal</strong> cambia eso para siempre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-large hike-bg text-white">
+    <div class="container">
+      <h2 class="text-center">Cómo funciona</h2>
+
+      <div class="grid-3">
+        <div class="card glass text-center">
+          <div class="step">1</div>
+          <h3>Antes del viaje</h3>
+          <p>Compartís un link. Tus viajeros instalan la app en 10 segundos (PWA).</p>
+        </div>
+
+        <div class="card glass text-center">
+          <div class="step">2</div>
+          <h3>Durante la expedición</h3>
+          <p>Escriben reflexiones, gratitud y estado de ánimo. Funciona 100% offline.</p>
+        </div>
+
+        <div class="card glass text-center">
+          <div class="step">3</div>
+          <h3>Al finalizar</h3>
+          <p>Ellos reciben un hermoso PDF personalizado.<br><strong>Vos recibís un informe profesional con IA.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:white;">
+    <div class="container">
+      <h2 class="text-center">Qué recibís vos como guía o agencia</h2>
+
+      <div class="grid-2">
+        <div class="card card-light">
+          <h3>📊 Informe IA automático</h3>
+          <ul>
+            <li>✅ Análisis de sentimiento del grupo</li>
+            <li>✅ Evaluación detallada de tu guía</li>
+            <li>✅ Citas textuales de los viajeros</li>
+            <li>✅ Palabras y temas clave</li>
+            <li>✅ Recomendaciones accionables</li>
+          </ul>
+        </div>
+
+        <div class="card card-light">
+          <h3>🚀 Beneficios reales</h3>
+          <ul>
+            <li>✅ Testimonios auténticos para marketing</li>
+            <li>✅ Mejora continua de tu servicio</li>
+            <li>✅ Diferenciación frente a la competencia</li>
+            <li>✅ Material listo para Instagram y web</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-large pond-bg text-white">
+    <div class="container text-center">
+      <h2>Caso real: EKV Trekking</h2>
+
+      <div class="grid-4 stats" style="margin-top:48px; text-align:left;">
+        <div class="card glass">
+          <strong>8</strong>
+          <span>viajeros</span>
+        </div>
+
+        <div class="card glass">
+          <strong>47</strong>
+          <span>entradas</span>
+        </div>
+
+        <div class="card glass">
+          <strong>94%</strong>
+          <span>positivo</span>
+        </div>
+
+        <div class="card glass">
+          <strong>12</strong>
+          <span>testimonios</span>
+        </div>
+      </div>
+
+      <p style="margin-top:48px; font-size:24px; font-style:italic;">
+        "Pasé de recibir 'todo genial' por WhatsApp a tener datos concretos, insights y contenido profesional."
+      </p>
+
+      <p style="margin-top:24px; font-weight:bold;">
+        — Walter, Guía de EKV Trekking
+      </p>
+    </div>
+  </section>
+
+  <section id="planes" class="section-large" style="background:white;">
+    <div class="container">
+      <h2 class="text-center">Elegí tu plan</h2>
+
+      <p class="text-center" style="font-size:22px; color:#57534e; margin-bottom:48px;">
+        Sin contratos largos • Cancelación cuando quieras
+      </p>
+
+      <div class="grid-3">
+
+        <div class="card card-light">
+          <h3>🥾 Guía Independiente</h3>
+          <p style="color:#78716c; margin-bottom:24px;">Ideal para freelance</p>
+
+          <div style="font-size:52px; font-weight:bold; margin-bottom:32px;">Consultar</div>
+
+          <ul style="margin-bottom:40px;">
+            <li>✔ Hasta 50 viajeros/mes</li>
+            <li>✔ App con tu logo</li>
+            <li>✔ Informes con IA</li>
+            <li>✔ Soporte por WhatsApp</li>
+          </ul>
+
+          <a href="https://wa.me/543571608755" class="btn btn-dark" style="display:block; text-align:center;">
+            Elegir este plan
+          </a>
+        </div>
+
+        <div class="card popular">
+          <div class="popular-badge">MÁS POPULAR</div>
+
+          <h3>🏔️ Profesional</h3>
+          <p style="color:#78716c; margin-bottom:24px;">Para empresas pequeñas</p>
+
+          <div style="font-size:52px; font-weight:bold; margin-bottom:32px;">Consultar</div>
+
+          <ul style="margin-bottom:40px;">
+            <li>✔ Hasta 150 viajeros/mes</li>
+            <li>✔ Multi-guía</li>
+            <li>✔ Dashboard consolidado</li>
+            <li>✔ Soporte prioritario</li>
+          </ul>
+
+          <a href="https://wa.me/543571608755" class="btn btn-primary" style="display:block; text-align:center;">
+            Elegir este plan
+          </a>
+        </div>
+
+        <div class="card card-light">
+          <h3>🌍 Agencia</h3>
+          <p style="color:#78716c; margin-bottom:24px;">Para operadores consolidados</p>
+
+          <div style="font-size:52px; font-weight:bold; margin-bottom:32px;">Consultar</div>
+
+          <ul style="margin-bottom:40px;">
+            <li>✔ Viajeros ilimitados</li>
+            <li>✔ White label (marca blanca)</li>
+            <li>✔ Soporte dedicado</li>
+            <li>✔ Onboarding personalizado</li>
+          </ul>
+
+          <a href="https://wa.me/543571608755" class="btn btn-dark" style="display:block; text-align:center;">
+            Elegir este plan
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section text-center">
+    <div class="container" style="max-width:800px;">
+      <h2>Garantía sin riesgo</h2>
+
+      <p style="font-size:28px;">
+        Probá Mountain Journal en tu próxima expedición.<br>
+        Si no te sirve, te devolvemos el 100%.
+      </p>
+
+      <p style="margin-top:32px; color:#4ade80; font-weight:bold;">
+        Sin preguntas. Sin vueltas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-large amber-section text-center">
+    <div class="container" style="max-width:900px;">
+      <h2>¿Listo para profesionalizar tus expediciones?</h2>
+
+      <p style="font-size:24px; margin-bottom:40px;">
+        Setup en 15 minutos • Primer informe en tu próxima salida
+      </p>
+
+      <a href="https://wa.me/543571608755?text=Hola%20quiero%20probar%20Mountain%20Journal" class="btn btn-white" style="font-size:28px; padding:24px 48px;">
+        Contactame por WhatsApp
+      </a>
+
+      <p style="margin-top:24px; opacity:0.9;">
+        Email: ekvsenderismo@gmail.com
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Mountain Journal © 2026 • Convertí experiencias en datos. Datos en mejoras. Mejoras en más clientes.
+    </p>
+  </footer>
+
+</body>
+</html>
